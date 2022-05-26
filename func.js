@@ -29,4 +29,33 @@ const divp = document.createElement('p');
 divp.textContent = 'ME TOO!';
 divContainer.appendChild(divp);
 
+// Method 2 Limitation : only 1 onClick propertyper element
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World");
 
+//Method 3 - We can add multiple listeners if needed - much more flexible
+const btn2 = document.querySelector('#btn2');
+btn2.addEventListener('click', () => {
+  alert("Hello World");
+});
+
+///////////////////////////////With Helper Function
+function alertFunction() {
+    alert("YAY! YOU DID IT!");
+  }
+
+  const btn3 = document.querySelector('#btn3');
+  btn3.onclick = alertFunction;
+
+  const btn4 = document.querySelector('#btn4');
+  btn4.addEventListener('click', alertFunction);
+
+  //callback thing
+  const btn5 = document.querySelector('#btn5');
+  btn5.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+  });
+  
+  /*btn5.addEventListener('click', function (e) {
+    console.log(e.target);
+  });*/
